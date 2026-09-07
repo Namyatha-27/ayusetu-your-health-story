@@ -309,7 +309,7 @@ function DoctorCaseView() {
               Consultation status
             </h2>
             <div className="mt-4">
-              <ConsultationProgress status={record.status} />
+              <ConsultationProgress status={record.status} vertical />
             </div>
             <div className="mt-4 flex flex-wrap gap-2">
               <Button

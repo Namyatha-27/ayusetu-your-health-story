@@ -62,10 +62,17 @@ export const CONSULTATION_STEPS: CaseStatus[] = [
   "completed",
 ];
 
-export function ConsultationProgress({ status }: { status: CaseStatus }) {
+export function ConsultationProgress({
+  status,
+  vertical = false,
+}: {
+  status: CaseStatus;
+  vertical?: boolean;
+}) {
   const idx = CONSULTATION_STEPS.indexOf(status);
   return (
-    <ol className="grid gap-3 sm:grid-cols-4">
+    <ol className={cn("grid gap-3", vertical ? "grid-cols-1" : "sm:grid-cols-4")}>
+
       {CONSULTATION_STEPS.map((step, i) => (
         <li key={step} className="flex items-start gap-2">
           <span
