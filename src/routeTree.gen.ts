@@ -17,6 +17,13 @@ import { Route as DoctorDashboardRouteImport } from './routes/doctor.dashboard'
 import { Route as DoctorLoginRouteImport } from './routes/doctor.login'
 import { Route as ManagementDashboardRouteImport } from './routes/management.dashboard'
 import { Route as ManagementLoginRouteImport } from './routes/management.login'
+import { Route as PatientDashboardRouteImport } from './routes/patient.dashboard'
+import { Route as PatientDoctorRouteImport } from './routes/patient.doctor'
+import { Route as PatientFamilyRouteImport } from './routes/patient.family'
+import { Route as PatientFollowUpRouteImport } from './routes/patient.follow-up'
+import { Route as PatientHistoryRouteImport } from './routes/patient.history'
+import { Route as PatientLoginRouteImport } from './routes/patient.login'
+import { Route as PatientProfileRouteImport } from './routes/patient.profile'
 import { Route as DoctorCaseIdRouteImport } from './routes/doctor.case.$id'
 import { Route as PatientCaseNewRouteImport } from './routes/patient.case.new'
 import { Route as PatientCaseSummaryRouteImport } from './routes/patient.case.summary'
@@ -61,6 +68,41 @@ const ManagementLoginRoute = ManagementLoginRouteImport.update({
   path: '/management/login',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PatientDashboardRoute = PatientDashboardRouteImport.update({
+  id: '/patient/dashboard',
+  path: '/patient/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PatientDoctorRoute = PatientDoctorRouteImport.update({
+  id: '/patient/doctor',
+  path: '/patient/doctor',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PatientFamilyRoute = PatientFamilyRouteImport.update({
+  id: '/patient/family',
+  path: '/patient/family',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PatientFollowUpRoute = PatientFollowUpRouteImport.update({
+  id: '/patient/follow-up',
+  path: '/patient/follow-up',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PatientHistoryRoute = PatientHistoryRouteImport.update({
+  id: '/patient/history',
+  path: '/patient/history',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PatientLoginRoute = PatientLoginRouteImport.update({
+  id: '/patient/login',
+  path: '/patient/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PatientProfileRoute = PatientProfileRouteImport.update({
+  id: '/patient/profile',
+  path: '/patient/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DoctorCaseIdRoute = DoctorCaseIdRouteImport.update({
   id: '/doctor/case/$id',
   path: '/doctor/case/$id',
@@ -86,6 +128,13 @@ export interface FileRoutesByFullPath {
   '/doctor/login': typeof DoctorLoginRoute
   '/management/dashboard': typeof ManagementDashboardRoute
   '/management/login': typeof ManagementLoginRoute
+  '/patient/dashboard': typeof PatientDashboardRoute
+  '/patient/doctor': typeof PatientDoctorRoute
+  '/patient/family': typeof PatientFamilyRoute
+  '/patient/follow-up': typeof PatientFollowUpRoute
+  '/patient/history': typeof PatientHistoryRoute
+  '/patient/login': typeof PatientLoginRoute
+  '/patient/profile': typeof PatientProfileRoute
   '/doctor/case/$id': typeof DoctorCaseIdRoute
   '/patient/case/new': typeof PatientCaseNewRoute
   '/patient/case/summary': typeof PatientCaseSummaryRoute
@@ -99,6 +148,13 @@ export interface FileRoutesByTo {
   '/doctor/login': typeof DoctorLoginRoute
   '/management/dashboard': typeof ManagementDashboardRoute
   '/management/login': typeof ManagementLoginRoute
+  '/patient/dashboard': typeof PatientDashboardRoute
+  '/patient/doctor': typeof PatientDoctorRoute
+  '/patient/family': typeof PatientFamilyRoute
+  '/patient/follow-up': typeof PatientFollowUpRoute
+  '/patient/history': typeof PatientHistoryRoute
+  '/patient/login': typeof PatientLoginRoute
+  '/patient/profile': typeof PatientProfileRoute
   '/doctor/case/$id': typeof DoctorCaseIdRoute
   '/patient/case/new': typeof PatientCaseNewRoute
   '/patient/case/summary': typeof PatientCaseSummaryRoute
@@ -113,6 +169,13 @@ export interface FileRoutesById {
   '/doctor/login': typeof DoctorLoginRoute
   '/management/dashboard': typeof ManagementDashboardRoute
   '/management/login': typeof ManagementLoginRoute
+  '/patient/dashboard': typeof PatientDashboardRoute
+  '/patient/doctor': typeof PatientDoctorRoute
+  '/patient/family': typeof PatientFamilyRoute
+  '/patient/follow-up': typeof PatientFollowUpRoute
+  '/patient/history': typeof PatientHistoryRoute
+  '/patient/login': typeof PatientLoginRoute
+  '/patient/profile': typeof PatientProfileRoute
   '/doctor/case/$id': typeof DoctorCaseIdRoute
   '/patient/case/new': typeof PatientCaseNewRoute
   '/patient/case/summary': typeof PatientCaseSummaryRoute
@@ -128,6 +191,13 @@ export interface FileRouteTypes {
     | '/doctor/login'
     | '/management/dashboard'
     | '/management/login'
+    | '/patient/dashboard'
+    | '/patient/doctor'
+    | '/patient/family'
+    | '/patient/follow-up'
+    | '/patient/history'
+    | '/patient/login'
+    | '/patient/profile'
     | '/doctor/case/$id'
     | '/patient/case/new'
     | '/patient/case/summary'
@@ -141,6 +211,13 @@ export interface FileRouteTypes {
     | '/doctor/login'
     | '/management/dashboard'
     | '/management/login'
+    | '/patient/dashboard'
+    | '/patient/doctor'
+    | '/patient/family'
+    | '/patient/follow-up'
+    | '/patient/history'
+    | '/patient/login'
+    | '/patient/profile'
     | '/doctor/case/$id'
     | '/patient/case/new'
     | '/patient/case/summary'
@@ -154,6 +231,13 @@ export interface FileRouteTypes {
     | '/doctor/login'
     | '/management/dashboard'
     | '/management/login'
+    | '/patient/dashboard'
+    | '/patient/doctor'
+    | '/patient/family'
+    | '/patient/follow-up'
+    | '/patient/history'
+    | '/patient/login'
+    | '/patient/profile'
     | '/doctor/case/$id'
     | '/patient/case/new'
     | '/patient/case/summary'
@@ -168,6 +252,13 @@ export interface RootRouteChildren {
   DoctorLoginRoute: typeof DoctorLoginRoute
   ManagementDashboardRoute: typeof ManagementDashboardRoute
   ManagementLoginRoute: typeof ManagementLoginRoute
+  PatientDashboardRoute: typeof PatientDashboardRoute
+  PatientDoctorRoute: typeof PatientDoctorRoute
+  PatientFamilyRoute: typeof PatientFamilyRoute
+  PatientFollowUpRoute: typeof PatientFollowUpRoute
+  PatientHistoryRoute: typeof PatientHistoryRoute
+  PatientLoginRoute: typeof PatientLoginRoute
+  PatientProfileRoute: typeof PatientProfileRoute
   DoctorCaseIdRoute: typeof DoctorCaseIdRoute
   PatientCaseNewRoute: typeof PatientCaseNewRoute
   PatientCaseSummaryRoute: typeof PatientCaseSummaryRoute
@@ -231,6 +322,55 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ManagementLoginRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/patient/dashboard': {
+      id: '/patient/dashboard'
+      path: '/patient/dashboard'
+      fullPath: '/patient/dashboard'
+      preLoaderRoute: typeof PatientDashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/patient/doctor': {
+      id: '/patient/doctor'
+      path: '/patient/doctor'
+      fullPath: '/patient/doctor'
+      preLoaderRoute: typeof PatientDoctorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/patient/family': {
+      id: '/patient/family'
+      path: '/patient/family'
+      fullPath: '/patient/family'
+      preLoaderRoute: typeof PatientFamilyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/patient/follow-up': {
+      id: '/patient/follow-up'
+      path: '/patient/follow-up'
+      fullPath: '/patient/follow-up'
+      preLoaderRoute: typeof PatientFollowUpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/patient/history': {
+      id: '/patient/history'
+      path: '/patient/history'
+      fullPath: '/patient/history'
+      preLoaderRoute: typeof PatientHistoryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/patient/login': {
+      id: '/patient/login'
+      path: '/patient/login'
+      fullPath: '/patient/login'
+      preLoaderRoute: typeof PatientLoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/patient/profile': {
+      id: '/patient/profile'
+      path: '/patient/profile'
+      fullPath: '/patient/profile'
+      preLoaderRoute: typeof PatientProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/doctor/case/$id': {
       id: '/doctor/case/$id'
       path: '/doctor/case/$id'
@@ -264,6 +404,13 @@ const rootRouteChildren: RootRouteChildren = {
   DoctorLoginRoute: DoctorLoginRoute,
   ManagementDashboardRoute: ManagementDashboardRoute,
   ManagementLoginRoute: ManagementLoginRoute,
+  PatientDashboardRoute: PatientDashboardRoute,
+  PatientDoctorRoute: PatientDoctorRoute,
+  PatientFamilyRoute: PatientFamilyRoute,
+  PatientFollowUpRoute: PatientFollowUpRoute,
+  PatientHistoryRoute: PatientHistoryRoute,
+  PatientLoginRoute: PatientLoginRoute,
+  PatientProfileRoute: PatientProfileRoute,
   DoctorCaseIdRoute: DoctorCaseIdRoute,
   PatientCaseNewRoute: PatientCaseNewRoute,
   PatientCaseSummaryRoute: PatientCaseSummaryRoute,
